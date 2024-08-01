@@ -4,7 +4,7 @@ from gpytorch.distributions import MultivariateNormal
 from gpytorch.kernels import ScaleKernel, RBFKernel, GridInterpolationKernel
 from gpytorch.means import ZeroMean
 from gpytorch.lazy import DiagLazyTensor, lazify, RootLazyTensor
-from online_gp.likelihoods import FNMGLikelihood
+from online_gp.online_gp.likelihoods import FNMGLikelihood
 from gpytorch.models import GP
 from gpytorch.utils.memoize import (
     cached,
@@ -15,8 +15,8 @@ from gpytorch.utils.interpolation import left_interp
 from gpytorch.settings import skip_posterior_variances, fast_pred_var, fast_pred_samples
 from gpytorch.lazy import ZeroLazyTensor
 
-from online_gp.lazy import UpdatedRootLazyTensor
-from online_gp.settings import detach_interp_coeff
+from online_gp.online_gp.lazy import UpdatedRootLazyTensor
+from online_gp.online_gp.settings import detach_interp_coeff
 
 
 def _get_wmat_from_kernel(lazy_kernel):
